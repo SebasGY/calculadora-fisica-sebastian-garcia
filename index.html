@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Magnitudes Físicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Magnitudes Físicas</h1>
+        <p>Estudiante: Sebastián Garcia</p>
+        <p>Universidad Cooperativa de Colombia - Ingeniería de Software</p>
+    </header>
+    <main>
+        <section class="selector">
+            <label for="calculo">Seleccione un cálculo:</label>
+            <select id="calculo" onchange="mostrarCalculo()">
+                <option value="">-- Seleccione --</option>
+                <option value="velocidad">Velocidad</option>
+                <option value="aceleracion">Aceleración</option>
+                <option value="fuerza">Fuerza</option>
+                <option value="trabajo">Trabajo</option>
+                <option value="energiaCinetica">Energía Cinética</option>
+                <option value="energiaPotencial">Energía Potencial</option>
+                <option value="densidad">Densidad</option>
+                <option value="presion">Presión</option>
+                <option value="carga">Carga Eléctrica</option>
+                <option value="voltaje">Ley de Ohm</option>
+            </select>
+        </section>
+
+        <section id="velocidad" class="calc-section hidden">
+            <h2>Velocidad (v = d / t)</h2>
+            <label>Distancia (m): <input type="number" id="distancia" step="any"></label>
+            <label>Tiempo (s): <input type="number" id="tiempo" step="any"></label>
+            <button onclick="calcularVelocidad()">Calcular</button>
+            <p id="resultadoVelocidad"></p>
+        </section>
+
+        <section id="aceleracion" class="calc-section hidden">
+            <h2>Aceleración (a = Δv / Δt)</h2>
+            <label>Cambio de Velocidad (m/s): <input type="number" id="deltaV" step="any"></label>
+            <label>Cambio de Tiempo (s): <input type="number" id="deltaT" step="any"></label>
+            <button onclick="calcularAceleracion()">Calcular</button>
+            <p id="resultadoAceleracion"></p>
+        </section>
+
+        <section id="fuerza" class="calc-section hidden">
+            <h2>Fuerza (F = m · a)</h2>
+            <label>Masa (kg): <input type="number" id="masaF" step="any"></label>
+            <label>Aceleración (m/s²): <input type="number" id="aceleracionF" step="any"></label>
+            <button onclick="calcularFuerza()">Calcular</button>
+            <p id="resultadoFuerza"></p>
+        </section>
+
+        <section id="trabajo" class="calc-section hidden">
+            <h2>Trabajo (W = F · d · cos(θ))</h2>
+            <label>Fuerza (N): <input type="number" id="fuerzaW" step="any"></label>
+            <label>Distancia (m): <input type="number" id="distanciaW" step="any"></label>
+            <label>Ángulo θ (grados): <input type="number" id="angulo" step="any"></label>
+            <button onclick="calcularTrabajo()">Calcular</button>
+            <p id="resultadoTrabajo"></p>
+        </section>
+
+        <section id="energiaCinetica" class="calc-section hidden">
+            <h2>Energía Cinética (K = ½ · m · v²)</h2>
+            <label>Masa (kg): <input type="number" id="masaK" step="any"></label>
+            <label>Velocidad (m/s): <input type="number" id="velocidadK" step="any"></label>
+            <button onclick="calcularEnergiaCinetica()">Calcular</button>
+            <p id="resultadoEnergiaCinetica"></p>
+        </section>
+
+        <section id="energiaPotencial" class="calc-section hidden">
+            <h2>Energía Potencial Gravitatoria (U = m · g · h)</h2>
+            <label>Masa (kg): <input type="number" id="masaU" step="any"></label>
+            <label>Altura (m): <input type="number" id="altura" step="any"></label>
+            <button onclick="calcularEnergiaPotencial()">Calcular</button>
+            <p id="resultadoEnergiaPotencial"></p>
+        </section>
+
+        <section id="densidad" class="calc-section hidden">
+            <h2>Densidad (ρ = m / V)</h2>
+            <label>Masa (kg): <input type="number" id="masaD" step="any"></label>
+            <label>Volumen (m³): <input type="number" id="volumen" step="any"></label>
+            <button onclick="calcularDensidad()">Calcular</button>
+            <p id="resultadoDensidad"></p>
+        </section>
+
+        <section id="presion" class="calc-section hidden">
+            <h2>Presión (P = F / A)</h2>
+            <label>Fuerza (N): <input type="number" id="fuerzaP" step="any"></label>
+            <label>Área (m²): <input type="number" id="area" step="any"></label>
+            <button onclick="calcularPresion()">Calcular</button>
+            <p id="resultadoPresion"></p>
+        </section>
+
+        <section id="carga" class="calc-section hidden">
+            <h2>Carga Eléctrica (q = I · t)</h2>
+            <label>Corriente (A): <input type="number" id="corriente" step="any"></label>
+            <label>Tiempo (s): <input type="number" id="tiempoQ" step="any"></label>
+            <button onclick="calcularCarga()">Calcular</button>
+            <p id="resultadoCarga"></p>
+        </section>
+
+        <section id="voltaje" class="calc-section hidden">
+            <h2>Ley de Ohm (V = I · R)</h2>
+            <label>Corriente (A): <input type="number" id="corrienteV" step="any"></label>
+            <label>Resistencia (Ω): <input type="number" id="resistencia" step="any"></label>
+            <button onclick="calcularVoltaje()">Calcular</button>
+            <p id="resultadoVoltaje"></p>
+        </section>
+    </main>
+    <footer>
+        <p>Desarrollado por Sebastián Garcia - Ing. Software - Universidad Cooperativa de Colombia</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
